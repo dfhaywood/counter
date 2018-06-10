@@ -13,8 +13,10 @@
 		635C0EC920CAF0440034C9DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635C0EC820CAF0440034C9DB /* Assets.xcassets */; };
 		635C0ECC20CAF0440034C9DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635C0ECA20CAF0440034C9DB /* LaunchScreen.storyboard */; };
 		635C0ED720CAF0440034C9DB /* counterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C0ED620CAF0440034C9DB /* counterTests.swift */; };
-		635C0EE220CAF0440034C9DB /* counterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C0EE120CAF0440034C9DB /* counterUITests.swift */; };
 		635C0EF020CAF78E0034C9DB /* counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C0EEF20CAF78E0034C9DB /* counter.swift */; };
+		635C0EF220CB318C0034C9DB /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C0EF120CB318C0034C9DB /* ViewControllerUnitTests.swift */; };
+		635C0EF420CC565A0034C9DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C0EF320CC565A0034C9DB /* Task.swift */; };
+		635C0EF620CCAE770034C9DB /* ViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C0EF520CCAE770034C9DB /* ViewControllerUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +48,11 @@
 		635C0ED620CAF0440034C9DB /* counterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counterTests.swift; sourceTree = "<group>"; };
 		635C0ED820CAF0440034C9DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		635C0EDD20CAF0440034C9DB /* counterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = counterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		635C0EE120CAF0440034C9DB /* counterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counterUITests.swift; sourceTree = "<group>"; };
 		635C0EE320CAF0440034C9DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		635C0EEF20CAF78E0034C9DB /* counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counter.swift; sourceTree = "<group>"; };
+		635C0EF120CB318C0034C9DB /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUnitTests.swift; sourceTree = "<group>"; };
+		635C0EF320CC565A0034C9DB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		635C0EF520CCAE770034C9DB /* ViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				635C0ECA20CAF0440034C9DB /* LaunchScreen.storyboard */,
 				635C0ECD20CAF0440034C9DB /* Info.plist */,
 				635C0EEF20CAF78E0034C9DB /* counter.swift */,
+				635C0EF320CC565A0034C9DB /* Task.swift */,
 			);
 			path = counter;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				635C0ED620CAF0440034C9DB /* counterTests.swift */,
 				635C0ED820CAF0440034C9DB /* Info.plist */,
+				635C0EF120CB318C0034C9DB /* ViewControllerUnitTests.swift */,
 			);
 			path = counterTests;
 			sourceTree = "<group>";
@@ -122,8 +128,8 @@
 		635C0EE020CAF0440034C9DB /* counterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				635C0EE120CAF0440034C9DB /* counterUITests.swift */,
 				635C0EE320CAF0440034C9DB /* Info.plist */,
+				635C0EF520CCAE770034C9DB /* ViewControllerUITests.swift */,
 			);
 			path = counterUITests;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 					};
 					635C0EDC20CAF0440034C9DB = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 						TestTargetID = 635C0EBD20CAF0410034C9DB;
 					};
 				};
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635C0EF420CC565A0034C9DB /* Task.swift in Sources */,
 				635C0EF020CAF78E0034C9DB /* counter.swift in Sources */,
 				635C0EC420CAF0410034C9DB /* ViewController.swift in Sources */,
 				635C0EC220CAF0410034C9DB /* AppDelegate.swift in Sources */,
@@ -269,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635C0EF220CB318C0034C9DB /* ViewControllerUnitTests.swift in Sources */,
 				635C0ED720CAF0440034C9DB /* counterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635C0EE220CAF0440034C9DB /* counterUITests.swift in Sources */,
+				635C0EF620CCAE770034C9DB /* ViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZC6RR24Z2;
 				INFOPLIST_FILE = counterUITests/Info.plist;
@@ -522,6 +532,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dfhaywood.counterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = counter;
@@ -532,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZC6RR24Z2;
 				INFOPLIST_FILE = counterUITests/Info.plist;

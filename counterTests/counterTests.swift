@@ -24,27 +24,28 @@ class counterTests: XCTestCase {
     }
     
     func testIncrementCountByOne() {
-        counter.increment()
+        counter.totalCount = 33
+        counter.action(task: .plus)
         let result = counter.totalCount
-        XCTAssertEqual(result, 1)
+        XCTAssertEqual(result, 34)
     }
     
     func testDecrementCountByOne() {
-        counter.totalCount = 1
-        counter.decrement()
+        counter.totalCount = 5
+        counter.action(task: .minus)
         let result = counter.totalCount
-        XCTAssertEqual(result, 0)
+        XCTAssertEqual(result, 4)
     }
     
     func testDoNotDecrementIfTotalCountIsZero() {
-        counter.decrement()
+        counter.action(task: .minus)
         let result = counter.totalCount
         XCTAssertEqual(result, 0)
     }
     
     func testResetCounterToZero () {
         counter.totalCount = 25
-        counter.reset()
+        counter.action(task: .reset)
         let result = counter.totalCount
         XCTAssertEqual(result, 0)
     }

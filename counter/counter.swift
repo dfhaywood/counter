@@ -10,19 +10,24 @@ import Foundation
 
 class Counter {
     
-    var totalCount: Int = 0
+    var totalCount: Int
     
-    func increment() {
-        totalCount += 1
-    }
-    
-    func decrement() {
-        if totalCount > 0 {
-            totalCount -= 1
-        }
-    }
-    
-    func reset() {
+    init() {
         totalCount = 0
     }
+    
+    func action(task: Task) -> Int {
+        switch task {
+        case .plus:
+            totalCount += 1
+        case .minus:
+            if totalCount > 0 {
+                totalCount -= 1
+            }
+        case .reset:
+            totalCount = 0
+        }
+       return totalCount
+    }
+    
 }

@@ -1,14 +1,14 @@
 //
-//  counterUITests.swift
+//  ViewControllerUITests.swift
 //  counterUITests
 //
-//  Created by David Haywood on 6/8/18.
+//  Created by David Haywood on 6/9/18.
 //  Copyright © 2018 dfhaywood. All rights reserved.
 //
 
 import XCTest
 
-class counterUITests: XCTestCase {
+class ViewControllerUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,6 +28,23 @@ class counterUITests: XCTestCase {
         super.tearDown()
     }
     
-   
+    func testTapPlusButtonIncrementsCounter() {
+        let app = XCUIApplication()
+        let addButton = app.buttons["addButton"]
+        let display = app.staticTexts["display"]
+        addButton.tap()
+        XCTAssertEqual(display.label, "1")
+    }
+    
+    func testTapMinusButtonDecrementsCounter() {
+        let app = XCUIApplication()
+        let addButton = app.buttons["addButton"]
+        let minusButton = app.buttons["minusButton"]
+        let display = app.staticTexts["display"]
+        addButton.tap()
+        addButton.tap()
+        minusButton.tap()
+        XCTAssertEqual(display.label, "1")
+    }
     
 }
