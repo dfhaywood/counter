@@ -35,18 +35,18 @@ class ViewController: UIViewController {
     
     @IBAction func countButtonPressed(_ sender: UIButton) {
         
-        switch sender {
-        case incrementButton:
+        if sender == incrementButton {
             changeCount(action: .plus)
-        case decrementButton:
+        } else {
             changeCount(action: .minus)
-        default:
-            print("Invalid Selection")
         }
-        
-        
     }
     
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        
+        changeCount(action: .reset)
+        updateDisplay()
+    }
     
 
     func changeCount(action: Task) {
@@ -59,10 +59,13 @@ class ViewController: UIViewController {
             displayCount = counter.action(task: .reset)
         }
          print("After Action:\(counter.totalCount)")
+        updateDisplay()
+    }
+    
+    func updateDisplay() {
         counterLabel.text = String("\(displayCount)")
     }
     
-
     
 }
 

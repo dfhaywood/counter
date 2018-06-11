@@ -9,7 +9,9 @@
 import XCTest
 
 class ViewControllerUITests: XCTestCase {
-        
+    
+
+    
     override func setUp() {
         super.setUp()
         
@@ -21,6 +23,7 @@ class ViewControllerUITests: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
     }
     
     override func tearDown() {
@@ -38,13 +41,37 @@ class ViewControllerUITests: XCTestCase {
     
     func testTapMinusButtonDecrementsCounter() {
         let app = XCUIApplication()
-        let addButton = app.buttons["addButton"]
         let minusButton = app.buttons["minusButton"]
         let display = app.staticTexts["display"]
-        addButton.tap()
-        addButton.tap()
+        increaseCount(count: 2)
         minusButton.tap()
         XCTAssertEqual(display.label, "1")
+    }
+
+    func testTapMinusButtonWhenCountIsZero() {
+        let app = XCUIApplication()
+        let minusButton = app.buttons["minusButton"]
+        let display = app.staticTexts["display"]
+        minusButton.tap()
+        XCTAssertEqual(display.label, "0")
+    }
+
+    func testTapResetButtonSetsDisplayToZero() {
+        let app = XCUIApplication()
+        let resetButton = app.buttons["resetButton"]
+        let display = app.staticTexts["display"]
+        increaseCount(count: 15)
+        resetButton.tap()
+        XCTAssertEqual(display.label, "0")
+    }
+    
+    func increaseCount(count : Int) {
+        let app = XCUIApplication()
+        let addButton = app.buttons["addButton"]
+        
+        for _ in 1...count {
+            addButton.tap()
+        }
     }
     
 }
