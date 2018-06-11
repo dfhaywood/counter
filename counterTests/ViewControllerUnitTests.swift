@@ -68,4 +68,10 @@ class ViewControllerUnitTests: XCTestCase {
         XCTAssertEqual(newCount, 0)
     }
     
+    func testDisplayCountNil() {
+        viewController.displayCount = nil
+        XCTAssertNil(viewController.displayCount)
+    }
+
+    
 }

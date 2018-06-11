@@ -62,7 +62,18 @@ class ViewControllerUITests: XCTestCase {
         let display = app.staticTexts["display"]
         increaseCount(count: 15)
         resetButton.tap()
+        app.alerts["Reset"].buttons["Yes"].tap()
         XCTAssertEqual(display.label, "0")
+    }
+    
+    func testTapResetButtonCancelAction() {
+        let app = XCUIApplication()
+        let resetButton = app.buttons["resetButton"]
+        let display = app.staticTexts["display"]
+        increaseCount(count: 5)
+        resetButton.tap()
+        app.alerts["Reset"].buttons["No"].tap()
+        XCTAssertEqual(display.label, "5")
     }
     
     func increaseCount(count : Int) {

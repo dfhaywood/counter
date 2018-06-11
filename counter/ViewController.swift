@@ -11,7 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     var counter = Counter()
-    var displayCount = 0
+    var displayCount: Int? {
+        didSet {
+            guard let unwrappedDisplayCount = displayCount else {
+                print("Display Score is nil")
+                return
+            }
+            counterLabel.text = "\(unwrappedDisplayCount)"
+        }
+    }
 
     
     @IBOutlet weak var counterLabel: UILabel!
@@ -29,8 +37,6 @@ class ViewController: UIViewController {
         resetButton.layer.cornerRadius = 5.0
         aboutButton.layer.cornerRadius = 5.0
         
-        counterLabel.text = String(displayCount)
-        
     }
     
     @IBAction func countButtonPressed(_ sender: UIButton) {
@@ -44,28 +50,26 @@ class ViewController: UIViewController {
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         
-        changeCount(action: .reset)
-        updateDisplay()
+        let alertController = UIAlertController(title: "Reset", message: "Are you sure you want to reset the counter to zero?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.changeCount(action: .reset)
+        }))
+        present(alertController, animated: true, completion: nil)
+
     }
     
 
     func changeCount(action: Task) {
-        print("Before Action:\(counter.totalCount)")
-        if action == .plus {
+        switch action {
+        case .plus:
             displayCount = counter.action(task: .plus)
-        } else if action == .minus {
+        case .minus:
             displayCount = counter.action(task: .minus)
-        } else {
+        case .reset:
             displayCount = counter.action(task: .reset)
         }
-         print("After Action:\(counter.totalCount)")
-        updateDisplay()
     }
-    
-    func updateDisplay() {
-        counterLabel.text = String("\(displayCount)")
-    }
-    
     
 }
 
